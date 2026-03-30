@@ -9,3 +9,4 @@ local.properties
 *.iml 
 Thumbs.db 
 .env 
+db.sqlite3 
