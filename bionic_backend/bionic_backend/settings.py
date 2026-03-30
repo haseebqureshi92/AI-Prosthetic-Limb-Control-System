@@ -82,14 +82,13 @@ WSGI_APPLICATION = 'bionic_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(
+        'postgresql://neondb_owner:npg_pfvboxw0X7tz@ep-holy-frog-a1v18915-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require'
+    )
 }
-
-
+    
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
 
