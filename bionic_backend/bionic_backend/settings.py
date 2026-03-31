@@ -148,6 +148,7 @@ CSRF_TRUSTED_ORIGINS = [
     'https://ai-prosthetic-limb-control-system-production.up.railway.app',
 ]
 
+
 # REST Framework Configuration
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
