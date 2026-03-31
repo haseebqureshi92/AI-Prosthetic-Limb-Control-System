@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Lock, User, ShieldCheck, BrainCircuit } from 'lucide-react';
 import axios from 'axios';
 
-const API = 'http://127.0.0.1:8000';
+const API = 'https://ai-prosthetic-limb-control-system-production.up.railway.app';
 
 const Login = () => {
   const [role, setRole] = useState('patient');
