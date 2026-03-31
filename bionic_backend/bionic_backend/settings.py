@@ -141,7 +141,12 @@ CORS_ALLOW_HEADERS = [
     'x-device-token',   # ← Custom header used by Arduino/ESP32 firmware
 ]
 # CSRF exemptions for hardware push endpoint (hardware can't get CSRF tokens)
-CSRF_TRUSTED_ORIGINS = ['http://localhost:5173', 'http://127.0.0.1:8000']
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:5173',
+    'http://127.0.0.1:8000',
+    'https://ai-prosthetic-limb-control-system.vercel.app',
+    'https://ai-prosthetic-limb-control-system-production.up.railway.app',
+]
 
 # REST Framework Configuration
 REST_FRAMEWORK = {
