@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const BASE_URL = 'https://ai-prosthetic-limb-control-system-production.up.railway.app';
+
 const api = axios.create({
- baseURL: 'https://ai-prosthetic-limb-control-system-production.up.railway.app/api/v1/',
+  baseURL: `${BASE_URL}/api/v1/`,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -28,7 +30,7 @@ api.interceptors.response.use(
       originalRequest._retry = true;
       try {
         const refreshToken = localStorage.getItem('refresh_token');
-        const response = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+        const response = await axios.post(`${BASE_URL}/api/token/refresh/`, {
           refresh: refreshToken,
         });
         localStorage.setItem('access_token', response.data.access);
