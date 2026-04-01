@@ -1,33 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette */
   --bg-dark: #070B14;
   --bg-main: #070B14;
   --bg-panel: rgba(22, 33, 56, 0.6);
   --bg-panel-hover: rgba(26, 40, 68, 0.8);
   --bg-glass: rgba(16, 24, 44, 0.85);
-  
   --accent-primary: #00F0FF;
   --accent-secondary: #0075FF;
   --accent-glow: rgba(0, 240, 255, 0.4);
-  
   --text-main: #FFFFFF;
   --text-muted: #94A3B8;
-  
   --status-success: #10B981;
   --status-warning: #F59E0B;
   --status-error: #EF4444;
-
   --border-glass: rgba(255, 255, 255, 0.1);
   --border-glow: rgba(0, 240, 255, 0.2);
-
-  /* Spacing & Radii */
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-full: 9999px;
-  
-  /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-medium: 0.3s ease;
 }
@@ -50,7 +41,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Glassmorphism Classes */
 .glass-panel {
   background: var(--bg-panel);
   backdrop-filter: blur(12px);
@@ -67,7 +57,6 @@ body {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
 }
 
-/* Typography */
 h1, h2, h3, h4 {
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -80,11 +69,8 @@ h1, h2, h3, h4 {
   -webkit-text-fill-color: transparent;
 }
 
-.text-muted {
-  color: var(--text-muted);
-}
+.text-muted { color: var(--text-muted); }
 
-/* Base Inputs & Buttons */
 .btn-primary {
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   color: #000;
@@ -143,7 +129,6 @@ h1, h2, h3, h4 {
   box-shadow: 0 0 0 1px var(--accent-primary);
 }
 
-/* Utilities */
 .flex-center {
   display: flex;
   align-items: center;
@@ -168,29 +153,6 @@ h1, h2, h3, h4 {
   gap: 24px;
 }
 
-.mt-1 { margin-top: 8px; }
-.mt-2 { margin-top: 16px; }
-.mt-3 { margin-top: 24px; }
-.mt-4 { margin-top: 32px; }
-
-.mb-1 { margin-bottom: 8px; }
-.mb-2 { margin-bottom: 16px; }
-.mb-3 { margin-bottom: 24px; }
-.mb-4 { margin-bottom: 32px; }
-
-/* Status Indicators */
-.status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.status-dot.online  { background-color: var(--status-success); box-shadow: 0 0 8px var(--status-success); animation: pulse 2s infinite; }
-.status-dot.warning { background-color: var(--status-warning); box-shadow: 0 0 8px var(--status-warning); }
-.status-dot.offline { background-color: var(--status-error);   box-shadow: 0 0 8px var(--status-error); }
-
-/* Grid Layouts */
 .grid-cols-4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -203,30 +165,41 @@ h1, h2, h3, h4 {
   gap: 16px;
 }
 
-/* Flex helpers */
-.flex-column {
-  display: flex;
-  flex-direction: column;
+.flex-column { display: flex; flex-direction: column; }
+.text-secondary { color: var(--accent-secondary); }
+.text-center { text-align: center; }
+
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-/* Color helpers */
-.text-secondary { color: var(--accent-secondary); }
-.text-center    { text-align: center; }
+.status-dot.online  { background-color: var(--status-success); box-shadow: 0 0 8px var(--status-success); animation: pulse 2s infinite; }
+.status-dot.warning { background-color: var(--status-warning); box-shadow: 0 0 8px var(--status-warning); }
+.status-dot.offline { background-color: var(--status-error);   box-shadow: 0 0 8px var(--status-error); }
 
-/* Animate spin (loading spinner) */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
 .animate-spin { animation: spin 1s linear infinite; }
 
-/* Pulse (for online status dot) */
 @keyframes pulse {
   0%, 100% { box-shadow: 0 0 6px var(--status-success); }
   50%       { box-shadow: 0 0 14px var(--status-success); }
 }
 
-/* Code text */
 code {
   font-family: 'Courier New', monospace;
   background: rgba(0, 240, 255, 0.08);
@@ -236,21 +209,17 @@ code {
   color: var(--accent-primary);
 }
 
-/* Disabled buttons */
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none !important;
 }
 
-/* Select element */
 select.input-glass {
   appearance: none;
   cursor: pointer;
 }
 
-
-/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
@@ -260,46 +229,66 @@ select.input-glass {
   animation: fadeIn 0.4s ease forwards;
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-dark);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border-glass);
-  border-radius: var(--radius-full);
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
-}
-/* ============================================
-   MOBILE RESPONSIVE STYLES
-   ============================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--border-glass); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
+/* ============================================
+   MOBILE TOPBAR — hidden on desktop
+   ============================================ */
+.mobile-topbar {
+  display: none;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
 @media (max-width: 768px) {
 
-  /* Sidebar — hide on mobile */
+  /* Show mobile top bar */
+  .mobile-topbar {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 60px !important;
+    background: rgba(7, 11, 20, 0.97) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+    z-index: 1001 !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 16px !important;
+  }
+
+  /* Hide sidebar off screen */
   .sidebar {
     position: fixed !important;
-    left: -100% !important;
-    z-index: 1000;
-    transition: left 0.3s ease;
+    top: 0 !important;
+    left: 0 !important;
+    transform: translateX(-100%) !important;
+    z-index: 1003 !important;
+    transition: transform 0.3s ease !important;
+    height: 100vh !important;
     width: 260px !important;
   }
 
+  /* Show sidebar when open */
   .sidebar.open {
-    left: 0 !important;
+    transform: translateX(0) !important;
   }
 
-  /* Main content — full width on mobile */
+  /* Push content down below topbar */
   main {
+    margin-top: 60px !important;
     padding: 16px !important;
     width: 100% !important;
+    height: calc(100vh - 60px) !important;
   }
 
-  /* Grid layouts — single column on mobile */
+  /* Single column grids */
   .grid-cols-2,
   .grid-cols-3,
   .grid-cols-4,
@@ -308,64 +297,33 @@ select.input-glass {
     gap: 16px !important;
   }
 
-  /* Glass panels — smaller padding */
   .glass-panel {
     padding: 16px !important;
   }
 
-  /* Flex between — stack on mobile */
   .flex-between {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 12px !important;
   }
 
-  /* Headings — smaller on mobile */
-  h1 {
-    font-size: 1.4rem !important;
-  }
+  h1 { font-size: 1.4rem !important; }
+  h2 { font-size: 1.2rem !important; }
+  h3 { font-size: 1rem !important; }
 
-  h2 {
-    font-size: 1.2rem !important;
-  }
-
-  h3 {
-    font-size: 1rem !important;
-  }
-
-  /* Buttons — full width on mobile */
-  .btn-primary,
-  .btn-secondary {
-    width: 100% !important;
-    padding: 14px !important;
-  }
-
-  /* Login/Signup pages */
-  .flex-center > .glass-panel {
-    padding: 24px 16px !important;
-    margin: 10px !important;
-  }
-
-  /* Margins */
   .mb-4 { margin-bottom: 16px !important; }
   .mt-4 { margin-top: 16px !important; }
 }
 
-/* Extra small screens */
 @media (max-width: 480px) {
-
-  body {
-    font-size: 14px;
-  }
+  body { font-size: 14px; }
 
   .glass-panel {
     padding: 12px !important;
     border-radius: 10px !important;
   }
 
-  h1 {
-    font-size: 1.2rem !important;
-  }
+  h1 { font-size: 1.2rem !important; }
 
   .btn-primary,
   .btn-secondary {
@@ -376,29 +334,5 @@ select.input-glass {
   .input-glass {
     padding: 12px !important;
     font-size: 0.9rem !important;
-  }
-}
-/* Mobile Topbar and Sidebar */
-@media (max-width: 768px) {
-  .mobile-topbar {
-    display: flex !important;
-  }
-  .mobile-overlay {
-    display: block !important;
-  }
-  .sidebar {
-    position: fixed !important;
-    left: -100% !important;
-    top: 0 !important;
-    z-index: 999 !important;
-    transition: left 0.3s ease !important;
-    height: 100vh !important;
-  }
-  .sidebar.open {
-    left: 0 !important;
-  }
-  main {
-    margin-top: 60px !important;
-    padding: 16px !important;
   }
 }
