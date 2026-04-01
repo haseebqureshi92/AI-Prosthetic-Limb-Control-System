@@ -274,3 +274,107 @@ select.input-glass {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* Sidebar — hide on mobile */
+  .sidebar {
+    position: fixed !important;
+    left: -100% !important;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    width: 260px !important;
+  }
+
+  .sidebar.open {
+    left: 0 !important;
+  }
+
+  /* Main content — full width on mobile */
+  main {
+    padding: 16px !important;
+    width: 100% !important;
+  }
+
+  /* Grid layouts — single column on mobile */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4,
+  .grid-cols-5 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Glass panels — smaller padding */
+  .glass-panel {
+    padding: 16px !important;
+  }
+
+  /* Flex between — stack on mobile */
+  .flex-between {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  /* Headings — smaller on mobile */
+  h1 {
+    font-size: 1.4rem !important;
+  }
+
+  h2 {
+    font-size: 1.2rem !important;
+  }
+
+  h3 {
+    font-size: 1rem !important;
+  }
+
+  /* Buttons — full width on mobile */
+  .btn-primary,
+  .btn-secondary {
+    width: 100% !important;
+    padding: 14px !important;
+  }
+
+  /* Login/Signup pages */
+  .flex-center > .glass-panel {
+    padding: 24px 16px !important;
+    margin: 10px !important;
+  }
+
+  /* Margins */
+  .mb-4 { margin-bottom: 16px !important; }
+  .mt-4 { margin-top: 16px !important; }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .glass-panel {
+    padding: 12px !important;
+    border-radius: 10px !important;
+  }
+
+  h1 {
+    font-size: 1.2rem !important;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 0.85rem !important;
+    padding: 12px !important;
+  }
+
+  .input-glass {
+    padding: 12px !important;
+    font-size: 0.9rem !important;
+  }
+}
