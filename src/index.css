@@ -378,3 +378,27 @@ select.input-glass {
     font-size: 0.9rem !important;
   }
 }
+/* Mobile Topbar and Sidebar */
+@media (max-width: 768px) {
+  .mobile-topbar {
+    display: flex !important;
+  }
+  .mobile-overlay {
+    display: block !important;
+  }
+  .sidebar {
+    position: fixed !important;
+    left: -100% !important;
+    top: 0 !important;
+    z-index: 999 !important;
+    transition: left 0.3s ease !important;
+    height: 100vh !important;
+  }
+  .sidebar.open {
+    left: 0 !important;
+  }
+  main {
+    margin-top: 60px !important;
+    padding: 16px !important;
+  }
+}
