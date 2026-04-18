@@ -1,1 +1,0 @@
-web: cd bionic_backend && pip install -r requirements.txt && python manage.py migrate && gunicorn bionic_backend.wsgi:application --bind 0.0.0.0:8080
